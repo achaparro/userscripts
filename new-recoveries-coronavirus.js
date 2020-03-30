@@ -15,7 +15,7 @@ function addColumn(tableId)
    
   var tableHeadRow = tableHead.rows[0];
   
-  tableHeadRow.insertCell(2).outerHTML = "<th>New recoveries</th>"
+  tableHeadRow.insertCell(6).outerHTML = "<th>New recoveries</th>"
   
 	var tableBody = document.getElementById(tableId).tBodies[0];
 	
@@ -56,7 +56,7 @@ function getRecoveries(tableBody) {
 function insertNewRecoveries(row, yesterdayRecoveries) {
   let recoveries = row.cells[5].innerHTML.replace(/,/g, '')
   
-  let newCell = row.insertCell(2);
+  let newCell = row.insertCell(6);
 	newCell.outerHTML = "<td style='font-weight: bold; text-align:right;background-color:limeGreen; color:white'>" + 
                         "+" + (recoveries - yesterdayRecoveries.get(getCountryName(row.cells[0]))) + "</td>"
 }
