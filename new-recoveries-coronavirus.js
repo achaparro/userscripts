@@ -11,23 +11,23 @@
 // ==/UserScript==
 function addColumn(tableId)
 { 
-	var tableHead = document.getElementById(tableId).tHead;
+  var tableHead = document.getElementById(tableId).tHead;
    
   var tableHeadRow = tableHead.rows[0];
   
   tableHeadRow.insertCell(6).outerHTML = "<th>New recoveries</th>"
   
-	var tableBody = document.getElementById(tableId).tBodies[0];
-	
+  var tableBody = document.getElementById(tableId).tBodies[0];
+  
   for (var i=0; i<tableBody.rows.length; i++) {
       insertNewRecoveries(tableBody.rows[i], getRecoveries(document.getElementById('main_table_countries_yesterday').tBodies[0]))
-	}
+  }
   
   var tableTotalBody = document.getElementById(tableId).tBodies[1];
   
   for (var i=0; i<tableTotalBody.rows.length; i++) {
-		  insertNewRecoveries(tableTotalBody.rows[i], getRecoveries(document.getElementById('main_table_countries_yesterday').tBodies[1]))
-	}
+      insertNewRecoveries(tableTotalBody.rows[i], getRecoveries(document.getElementById('main_table_countries_yesterday').tBodies[1]))
+  }
 }
 
 function getCountryName(tdCell) {
@@ -57,8 +57,13 @@ function insertNewRecoveries(row, yesterdayRecoveries) {
   let recoveries = row.cells[5].innerHTML.replace(/,/g, '')
   
   let newCell = row.insertCell(6);
-	newCell.outerHTML = "<td style='font-weight: bold; text-align:right;background-color:limeGreen; color:white'>" + 
-                        "+" + (recoveries - yesterdayRecoveries.get(getCountryName(row.cells[0]))) + "</td>"
+  
+  let newRecoveries = recoveries - yesterdayRecoveries.get(getCountryName(row.cells[0]))
+  
+  if (newRecoveries != 0) {
+    newCell.outerHTML = "<td style='font-weight: bold; text-align:right;background-color:limeGreen; color:white'>" + 
+                        "+" + newRecoveries + "</td>"
+  }
 }
 
 addColumn('main_table_countries_today')
