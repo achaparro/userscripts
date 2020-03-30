@@ -4,7 +4,7 @@
 // @namespace   achaparro
 // @match       https://www.worldometers.info/coronavirus/
 // @grant       none
-// @version     1.0
+// @version     1.1
 // @author      Alberto Chaparro
 // @updateURL   https://github.com/achaparro/userscripts/raw/master/new-recoveries-coronavirus.js
 // @downloadURL https://github.com/achaparro/userscripts/raw/master/new-recoveries-coronavirus.js
