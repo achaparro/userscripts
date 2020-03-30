@@ -1,12 +1,12 @@
 // ==UserScript==
-// @name        New recoveries covid-19
+// @namespace   New recoveries covid-19
 // @namespace   achaparro
 // @match       https://www.worldometers.info/coronavirus/
 // @grant       none
 // @version     1.0
 // @author      Alberto Chaparro
-// @description Adds a column for new daily covid-19 recoveries 
-// @downloadURL    https://github.com/achaparro/userscripts/
+// @updateURL   https://github.com/achaparro/userscripts/raw/master/new-recoveries-coronavirus.js
+// @downloadURL https://github.com/achaparro/userscripts/raw/master/new-recoveries-coronavirus.js
 // ==/UserScript==
 function addColumn(tableId)
 { 
