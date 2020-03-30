@@ -1,5 +1,6 @@
 // ==UserScript==
-// @namespace   New recoveries covid-19
+// @name        New recoveries covid-19
+// @description Adds a column for new daily covid-19 recoveries 
 // @namespace   achaparro
 // @match       https://www.worldometers.info/coronavirus/
 // @grant       none
